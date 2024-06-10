@@ -1349,7 +1349,7 @@
                                 <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"/>
                             </svg>
                             <span class="code">0c30b26e</span>
-                            <span class="code">campaign/event_20230817_cn/campaign_base.py</span>
+                            <span class="code">module/os/globe_camera.py</span>
                             <span class="code">
                                 <span class="snippet additions">++1</span>
                                 <span class="snippet deletions">--1</span>
@@ -1360,7 +1360,7 @@
                 <div class="row">
                     <section class="snippet">
                         <div class="body markdown">
-                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -36,7 +36,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line"># Smaller image to run faster<br /></span><span class="token prefix unchanged">·</span><span class="token line">area = (73, 135, 1223, 583)<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">image = rgb2gray(crop(self.device.image, area=area))<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">image = rgb2gray(crop(self.device.image, area=area, copy=False))<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line"><br /></span><span class="token prefix unchanged">·</span><span class="token line"># E1-1 ~ E1-2<br /></span><span class="token prefix unchanged">·</span><span class="token line">sim, button = TEMPLATE_EVENT_20230817_STORY_E1.match_result(image)</span></span></code>
+                            <code class="language-diff" xml:space="preserve"><span class="token coord">@@ -234,7 +234,7 @@</span><br /><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">screen = self.globe2screen(location).flatten().round()<br /></span><span class="token prefix unchanged">·</span><span class="token line">screen = np.round(screen).astype(int).tolist()<br /></span><span class="token prefix unchanged">·</span><span class="token line"># Average color of whirlpool center<br /></span></span><span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line">center = self.image_crop(screen)<br /></span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line">center = self.image_crop(screen, copy=False)<br /></span></span><span class="token unchanged"><span class="token prefix unchanged">·</span><span class="token line">center = np.array([[cv2.mean(center), ], ]).astype(np.uint8)<br /></span><span class="token prefix unchanged">·</span><span class="token line">h, s, v = rgb2hsv(center)[0][0]<br /></span><span class="token prefix unchanged">·</span><span class="token line"># hsv usually to be (338, 74.9, 100)</span></span></code>
                         </div>
                     </section>
                 </div>
@@ -1382,7 +1382,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 10 Jun 2024, 01:16:39 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 10 Jun 2024, 02:24:20 (timezone America/New_York) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
